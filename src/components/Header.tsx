@@ -2,21 +2,25 @@ import { site } from '../data/site'
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-20 border-b border-white/5 bg-ink-950/80 backdrop-blur">
+    <header className="sticky top-0 z-20 border-b border-gold-500/40 bg-paper-50/85 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <a href="#top" className="flex items-center gap-2.5">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-accent-400 to-brand-600 font-display text-sm font-bold text-white">
-            M
+          {/* 朱砂印章 */}
+          <span className="flex h-9 w-9 items-center justify-center rounded-sm border-2 border-brand-700 bg-brand-600 font-display text-lg leading-none text-paper-50 shadow-sm">
+            匠
           </span>
-          <span className="font-display text-lg font-semibold tracking-tight text-white">
-            Media<span className="text-brand-400">Hub</span>
-          </span>
+          <span className="font-display text-xl tracking-wide text-ink-900">MediaHub</span>
         </a>
-        <nav className="flex items-center gap-6 text-sm text-zinc-400">
-          <a href="#projects" className="transition hover:text-white">
+        <nav className="flex items-center gap-6 text-sm text-ink-500">
+          <a href="#projects" className="transition hover:text-brand-600">
             作品
           </a>
-          <a href={site.github} target="_blank" rel="noreferrer" className="transition hover:text-white">
+          <a
+            href={site.github}
+            target="_blank"
+            rel="noreferrer"
+            className="transition hover:text-brand-600"
+          >
             GitHub
           </a>
         </nav>
