@@ -13,6 +13,7 @@ export interface Project {
   tech: string[]
   repo: string
   demoUrl?: string
+  demoVideo?: string
 }
 
 export const projects: Project[] = [
@@ -38,6 +39,7 @@ export const projects: Project[] = [
     category: '工作流应用',
     status: 'live',
     demoUrl: 'https://rundown-studio-iota.vercel.app',
+    demoVideo: '/demo/rundown.webm',
     accent: 'from-brand-600 to-gold-500',
     tech: ['React Flow', 'TypeScript', 'Zustand', '时间轴引擎'],
     repo: 'rundown-studio',
@@ -51,6 +53,7 @@ export const projects: Project[] = [
     category: '工作流应用',
     status: 'live',
     demoUrl: 'https://videoflow-ai-phi.vercel.app',
+    demoVideo: '/demo/videoflow.webm',
     accent: 'from-accent-600 to-jade-500',
     tech: ['React', 'TypeScript', 'CPM 排程', 'DeepSeek API'],
     repo: 'videoflow-ai',
@@ -64,6 +67,7 @@ export const projects: Project[] = [
     category: '网站',
     status: 'live',
     demoUrl: 'https://script-studio-inky.vercel.app',
+    demoVideo: '/demo/script.webm',
     accent: 'from-gold-500 to-brand-600',
     tech: ['React', 'TypeScript', '剧本引擎', 'DeepSeek API'],
     repo: 'script-studio',
@@ -77,6 +81,7 @@ export const projects: Project[] = [
     category: '网站',
     status: 'live',
     demoUrl: 'https://subtitle-studio-nu.vercel.app',
+    demoVideo: '/demo/subtitle.webm',
     accent: 'from-jade-500 to-accent-500',
     tech: ['React', 'TypeScript', 'SRT 引擎', 'DeepSeek API'],
     repo: 'subtitle-studio',

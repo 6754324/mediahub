@@ -8,14 +8,41 @@ export function ProjectCard({ project }: { project: Project }) {
 
   return (
     <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-ink-200 bg-paper-100 transition duration-300 hover:-translate-y-1 hover:border-gold-500/60 hover:shadow-lg hover:shadow-gold-500/10">
-      {/* Cover */}
-      <div className={`relative h-32 overflow-hidden bg-gradient-to-br ${project.accent}`}>
-        <div className="pointer-events-none absolute -right-4 -top-8 select-none font-display text-[7rem] font-bold leading-none text-white/20">
-          {project.name.charAt(0)}
-        </div>
+      {/* Cover — 视频封面（hover 播放）或渐变封面 */}
+      <div className="relative h-36 overflow-hidden bg-paper-200">
+        {project.demoVideo ? (
+          <video
+            src={project.demoVideo}
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="absolute inset-0 h-full w-full object-cover"
+            onMouseEnter={(e) => {
+              void e.currentTarget.play().catch(() => {})
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.pause()
+              e.currentTarget.currentTime = 0
+            }}
+          />
+        ) : (
+          <>
+            <div className={`absolute inset-0 bg-gradient-to-br ${project.accent}`} />
+            <div className="pointer-events-none absolute -right-4 -top-8 select-none font-display text-[7rem] font-bold leading-none text-white/20">
+              {project.name.charAt(0)}
+            </div>
+          </>
+        )}
+
         <span className="absolute left-4 top-4 rounded-full bg-black/25 px-2.5 py-1 text-[11px] text-white backdrop-blur">
           {project.category}
         </span>
+        {project.demoVideo && (
+          <span className="absolute right-4 top-4 flex items-center gap-1 rounded-full bg-black/25 px-2 py-1 text-[11px] text-white backdrop-blur">
+            ▶ 演示
+          </span>
+        )}
         {!isLive && (
           <span className="absolute right-4 top-4 rounded-full bg-black/25 px-2.5 py-1 text-[11px] text-white/85 backdrop-blur">
             制作中
