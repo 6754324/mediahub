@@ -12,14 +12,14 @@ export function Header() {
             Media<span className="text-brand-400">Hub</span>
           </span>
         </a>
-        <a
-          href={site.github}
-          target="_blank"
-          rel="noreferrer"
-          className="text-sm text-zinc-400 transition hover:text-white"
-        >
-          GitHub
-        </a>
+        <nav className="flex items-center gap-6 text-sm text-zinc-400">
+          <a href="#projects" className="transition hover:text-white">
+            作品
+          </a>
+          <a href={site.github} target="_blank" rel="noreferrer" className="transition hover:text-white">
+            GitHub
+          </a>
+        </nav>
       </div>
     </header>
   )

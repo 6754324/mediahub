@@ -14,12 +14,12 @@ export function ProjectCard({ project }: { project: Project }) {
         <div className="pointer-events-none absolute -right-4 -top-8 select-none font-display text-[7rem] font-bold leading-none text-white/15">
           {project.name.charAt(0)}
         </div>
-        <span className="absolute left-4 top-4 rounded-full bg-black/30 px-2.5 py-1 font-mono text-[11px] text-white backdrop-blur">
+        <span className="absolute left-4 top-4 rounded-full bg-black/30 px-2.5 py-1 text-[11px] text-white backdrop-blur">
           {project.category}
         </span>
         {!isLive && (
-          <span className="absolute right-4 top-4 rounded-full bg-black/30 px-2.5 py-1 font-mono text-[11px] text-white/80 backdrop-blur">
-            in progress
+          <span className="absolute right-4 top-4 rounded-full bg-black/30 px-2.5 py-1 text-[11px] text-white/80 backdrop-blur">
+            制作中
           </span>
         )}
       </div>
@@ -38,16 +38,17 @@ export function ProjectCard({ project }: { project: Project }) {
 
         <div className="mt-5 flex items-center gap-3 border-t border-white/5 pt-4">
           {isHere ? (
-            <span className="text-sm font-medium text-accent-400">You are here</span>
+            <span className="text-sm font-medium text-accent-400">你在这里</span>
           ) : isLive ? (
             <>
               <a
                 href={project.demoUrl ?? `${site.github}/${project.repo}`}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-lg bg-brand-600 px-3 py-1.5 text-sm font-medium text-white transition hover:bg-brand-500"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-brand-600 px-3 py-1.5 text-sm font-medium text-white transition hover:bg-brand-500"
               >
-                Open demo
+                在线演示
+                <span aria-hidden>↗</span>
               </a>
               <a
                 href={`${site.github}/${project.repo}`}
@@ -55,11 +56,11 @@ export function ProjectCard({ project }: { project: Project }) {
                 rel="noreferrer"
                 className="text-sm text-zinc-400 transition hover:text-white"
               >
-                Source ↗
+                源码 ↗
               </a>
             </>
           ) : (
-            <span className="text-sm text-zinc-500">Coming soon</span>
+            <span className="text-sm text-zinc-500">敬请期待</span>
           )}
         </div>
       </div>
