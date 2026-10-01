@@ -26,7 +26,7 @@ export function Hero() {
       <div className="relative mx-auto max-w-6xl px-6 pb-24 pt-24 sm:pt-28">
         <span className="anim-rise inline-flex items-center gap-2 rounded-full border border-ink-200 bg-paper-100/70 px-3.5 py-1.5 text-xs text-ink-600">
           <span className="h-1.5 w-1.5 rounded-full bg-brand-600" />
-          作品集 · 媒体制作工具
+          媒体制作工具
         </span>
 
         <div className="relative mt-7">

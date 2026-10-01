@@ -5,6 +5,7 @@ import { TechBadge } from './TechBadge'
 export function ProjectCard({ project }: { project: Project }) {
   const isLive = project.status === 'live'
   const isHere = project.id === 'mediahub'
+  const poster = project.demoVideo?.replace(/\.webm$/, '-poster.jpg')
 
   return (
     <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-ink-200 bg-paper-100 transition duration-300 hover:-translate-y-1 hover:border-gold-500/60 hover:shadow-lg hover:shadow-gold-500/10">
@@ -13,6 +14,7 @@ export function ProjectCard({ project }: { project: Project }) {
         {project.demoVideo ? (
           <video
             src={project.demoVideo}
+            poster={poster}
             muted
             loop
             playsInline
@@ -39,7 +41,7 @@ export function ProjectCard({ project }: { project: Project }) {
           {project.category}
         </span>
         {project.demoVideo && (
-          <span className="absolute right-4 top-4 flex items-center gap-1 rounded-full bg-black/25 px-2 py-1 text-[11px] text-white backdrop-blur">
+          <span className="absolute bottom-4 right-4 flex items-center gap-1 rounded-full bg-black/25 px-2 py-1 text-[11px] text-white backdrop-blur">
             ▶ 演示
           </span>
         )}
@@ -73,7 +75,7 @@ export function ProjectCard({ project }: { project: Project }) {
                 rel="noreferrer"
                 className="inline-flex items-center gap-1.5 rounded-lg bg-brand-600 px-3 py-1.5 text-sm font-medium text-paper-50 transition hover:bg-brand-700"
               >
-                在线演示
+                开始使用
                 <span aria-hidden>↗</span>
               </a>
               <a
