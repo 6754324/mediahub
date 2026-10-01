@@ -20,9 +20,9 @@ export const projects: Project[] = [
   {
     id: 'mediahub',
     name: 'MediaHub',
-    tagline: '作品集入口 · 统一设计系统',
+    tagline: '媒体工具入口 · 统一设计系统',
     description:
-      '把这套工具串起来的枢纽——一个宣纸留白风格的作品集入口页，承载着贯穿所有项目、保持一致观感的统一设计系统。',
+      '把这套工具串起来的枢纽——一个宣纸留白风格的入口页，承载着贯穿所有项目、保持一致观感的统一设计系统。',
     category: '网站',
     status: 'live',
     demoUrl: 'https://mediahub-eight-nu.vercel.app',
